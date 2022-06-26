@@ -1,1 +1,71 @@
-Talking Duck
+<!-- per avere già struttura html precompilata (primo passo da fare) premendo ! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talking Duck</title>
+
+    <!-- Collego il manifest -->
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Icona in alto nella barra-->
+    <link rel="icon" href="images/icon.png">
+
+    <!-- Font Roboto Regular 400-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Font Roboto Bold 700 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Style css -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- classe per contenere tutto e disporre elementi uno sotto l'altro ma tutti staccati da bordo schermo -->
+    <div class="container">
+        <header>
+            <img src="images/logo.png" alt="Logo coding week">
+        </header>
+
+        <!-- contenuto principale -->
+        <main>
+            <!-- Casella di testo con più righe -->
+            <!-- Se fosse -->
+            <textarea placeholder="Scrivi qui..."></textarea>
+            <!-- Controlli -->
+            <div class="controls">
+                <!-- Play button -->
+                <button class="playButton">
+                    <img src="images/play.png" alt="Play logo">
+                </button>
+                <!-- Tone controls -->
+                <div class="pitch-controls">
+                    <!-- Label per la barra -->
+                    <label>Pitch</label>
+                    <!-- Input a barra -->
+                    <input type="range" min="0.1" max="2" step="0.1" class="input-range">
+                </div>
+
+            </div>
+            <!-- Paperella: uso figure per andare meglio con css -->
+            <figure>
+                <!-- questa figure ha una classe che mi servirà per gestire quando paperella parla o no-->
+                <!-- praticamente userò javascript per impostare la classe in "talking" quando mi servirà -->
+                <!-- e poi con le righe di css quando c'è classe talking abbiamo messo che nasconde la paperella statica -->
+                <img class="static-duck" src="images/talking-duck-static.png" alt="Static Duck">
+                <img class="animated-duck" src="images/talking-duck-animated.gif" alt="Talking Duck">
+            </figure>
+        </main>
+    </div>
+    <!-- Logica JS -->
+    <!-- collego script di javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
