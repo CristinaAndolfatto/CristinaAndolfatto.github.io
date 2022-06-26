@@ -1,0 +1,135 @@
+/* CSS reset per avere grandezze comprensive di bordo/padding */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Regole generiche con tag html che è uguale a body */
+html{
+    /* per questo sempre copia incolla dal sito google fonts */
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    background: linear-gradient(#3535ec,#b62897);
+    /* per far stare fisso background color */
+    background-attachment: fixed;
+    /* per fare tutte le scritte in bianco */
+    color: white;
+}
+
+/* Container */
+/* tecnica per "centrare" un po' tutte le cose e lasciare spazio intorno alla mia app in modo che non sia attacccato tutto a bordo schermo */
+.container{
+    width: 90%;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* per non far superare il contenitore alle immagini */
+img{
+    /* al max devono stare dentro contenitore */
+    max-width: 100%;
+}
+
+/* Logo immagine dentro header */
+header img{
+    width: 56px;
+    /* funzia anche se non lo scrivo: larghezza 56, altezza automatica per mantenere proporzione */
+    height: auto;
+}
+
+textarea{
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 100%;
+    height: 120px;
+    /* per non far cambiare dimensione */
+    resize: none;
+    /* tolgo bordi schifi */
+    border: none;
+    outline: none;
+    /* per curvatura bordi */
+    border-radius: 16px;
+    /* aumentiamo larghezza testo */
+    font-size: 20px;
+    /* aumentiamo distanza dai bordi del testo */
+    padding: 24px;
+    /* mettiamo font del testo di nuovo */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* devo creare flexbox per disporre elementi vicini tra loro */
+.controls{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+/* Button play */
+.playButton {
+    width: 64px;
+    height: 56px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f81669;
+}
+
+/* se il bottone è disabilitato (questo posso farlo perchè disabled è una pseudo classe che c'è sempre intrinseca) */
+button:disabled{
+    opacity: 0.5;
+    background-color: #dedede;
+}
+
+/* poi voglio dare sensazione che premo tasto quando tengo premuto bottone */
+button:active {
+    transform: scale(0.8);
+}
+
+/* e voglio anche che si ingrandisca un po' quando ci passo sopra col muose */
+button:hover {
+    transform: scale(1.1);
+}
+
+/* per centrare immagine dentro bottone */
+.playButton img{
+    vertical-align: middle;
+}
+
+/* controlli tono */
+.pitch-controls {
+    width: 70%;
+}
+
+/* per ingrandire barra range */
+.input-range {
+    width: 100%;
+    accent-color: white;
+}
+
+/* per sistemare scritta pitch */
+.label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Paperelle */
+/* paperella gif non deve vedersi subito ma solo quando parla il sintetizzatore */
+/* quindi dovremo fare così: quando sintetizzatore parla compare quella animata e si nasconde l'altra */
+/* viceversa quando non parla si nasconde quella animata e rimane quella statica */
+/* questa riga viene eseguita quando la classe talking non c'è */
+.animated-duck {
+    display: none;
+}
+
+/* classe animated duck dentro classe talking */
+.talking .animated-duck {
+    display: block;
+}
+
+/* classe static duck dentro classe talking */
+/* questa nasconde paperella statica quando c'è la classe talking */
+.talking .static-duck {
+    display: none;
+
+}
